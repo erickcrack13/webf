@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Página 3 - Fondo Abstracto</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: repeating-conic-gradient(
+      from 0deg,
+      #ff6f61,
+      #f7cac9,
+      #92a8d1,
+      #88d8b0,
+      #ffe156,
+      #ff6f61
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    padding: 30px;
+    color: #fff;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .carousel {
+    position: relative;
+    width: 85%;
+    max-width: 650px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    filter: brightness(0.9);
+    transition: transform 0.3s;
+  }
+
+  .slide img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Botones de navegación */
+  .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.2em;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+
+  .control:hover {
+    background: rgba(255,255,255,0.5);
+  }
+
+  .left {
+    left: 15px;
+  }
+
+  .right {
+    right: 15px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Galería Abstracta Creativa</h1>
+
+<div class="carousel">
+  <div class="slides" id="slides3">
+    <div class="slide"><img src="https://i.pinimg.com/736x/a8/45/76/a845768f441ce759d500e23661760b3c.jpg" alt="Foto 1"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80" alt="Foto 2"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1549887534-7c680845da34?auto=format&fit=crop&w=800&q=80" alt="Foto 3"></div>
+  </div>
+  <button class="control left" id="leftBtn" aria-label="Previous slide">&#10094;</button>
+  <button class="control right" id="rightBtn" aria-label="Next slide">&#10095;</button>
+</div>
+
+<script>
+  const slides3 = document.getElementById('slides3');
+  const totalSlides3 = slides3.children.length;
+  let currentIndex3 = 0;
+
+  document.getElementById('leftBtn').addEventListener('click', () => {
+    currentIndex3 = (currentIndex3 - 1 + totalSlides3) % totalSlides3;
+    updateSlide();
+  });
+
+  document.getElementById('rightBtn').addEventListener('click', () => {
+    currentIndex3 = (currentIndex3 + 1) % totalSlides3;
+    updateSlide();
+  });
+
+  function updateSlide() {
+    slides3.style.transform = `translateX(-${currentIndex3 * 100}%)`;
+  }
+</script>
+
+</body>
+</html>

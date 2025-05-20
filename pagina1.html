@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Página 1 - Colores Vivos</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    color: #fff;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre el título y el botón */
+  }
+
+  .carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    user-select: none;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+  }
+
+  /* Botones de navegación */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(255,255,255,1);
+  }
+
+  .prev {
+    left: 15px;
+  }
+
+  .next {
+    right: 15px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<h1>
+  Galería Creativa - Colores Vivos
+  <a href="paginaerick.html" class="back-button">Regresar</a>
+</h1>
+
+<div class="carousel">
+  <div class="slides" id="slides">
+    <div class="slide"><img src="https://i.pinimg.com/736x/90/ea/c5/90eac5974ed529ee855b65772bc87321.jpg" alt="Foto 1"></div>
+    <div class="slide"><img src="https://i.pinimg.com/736x/88/e0/0d/88e00d404081be51564f74bef6b3b70c.jpg" alt="Diseño artístico de un juego de Pokémon con colores vibrantes y detalles llamativos"></div>
+    <div class="slide"><img src="https://i.pinimg.com/736x/d0/30/fe/d030feee85529c7257b52be7b9fa9f54.jpg" alt="Foto 3"></div>
+  </div>
+  <button class="prev" id="prevBtn">&#10094;</button>
+  <button class="next" id="nextBtn">&#10095;</button>
+</div>
+
+<script>
+  const slides = document.getElementById('slides');
+  const totalSlides = slides.children.length;
+  let currentIndex = 0;
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  });
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+</script>
+
+</body>
+</html>

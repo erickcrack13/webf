@@ -1,0 +1,182 @@
+/* Para que todos los elementos usen box-sizing border-box */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fondo con un gradiente creativo */
+    background: linear-gradient(135deg, #ff7e5f, #876043, #4f79c6);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Animación para el fondo de gradiente */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Contener el contenido principal para que ocupe el resto del espacio */
+.contenido, main {
+    flex: 1;
+}
+
+/* Estilos del encabezado */
+header h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Botón Inicio */
+.inicio-btn {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.inicio-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Estilos del menú */
+nav {
+    background: #444;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Carrusel - tamaño pequeño y mediano */
+.carousel-container {
+    position: relative;
+    max-width: 600px; /* Ajusta a 600px para tamaño mediano, 300px para pequeño si quieres aún más pequeño */
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Puedes crear dos clases para tamaños diferentes si quieres cambiar dinámicamente */
+
+/* Tamaño mediano */
+.carousel-container.mediano {
+    max-width: 600px;
+}
+
+/* Tamaño pequeño */
+.carousel-container.pequeno {
+    max-width: 300px;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Ajusta el tamaño de las imágenes */
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    flex: 0 0 100%;
+}
+
+/* Opcional: si quieres que las imágenes sean aún más pequeñas, puedes limitar el ancho en porcentaje o píxeles */
+.carousel img.pequena {
+    max-width: 80%; /* o algún valor deseado */
+}
+
+/* Botones del carrusel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Contenido */
+.contenido {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creatividad Digital</title>
+    <link rel="stylesheet" href="estiloerick.css" />
+    <script src="carrusel.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Creatividad Digital</h1>
+        <button class="inicio-btn">Inicio</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="pagina1.html">POO ARTE</a></li>
+            <li><a href="pagina2.html">Diseños Creativos</a></li>
+            <li><a href="pagina3.html">Marcas</a></li>
+            <li><a href="pagina4.html">Logos Creativos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mover esta sección aquí -->
+    <section class="contenido">
+        <h2>Bienvenido a la plataforma de diseño</h2>
+        <p>Descubre las mejores ideas y herramientas para impulsar tu creatividad.</p>
+    </section>
+
+    <section class="carousel-container">
+        <div class="carousel">
+            <img src="https://i.pinimg.com/736x/fa/e1/41/fae14132f9f4f0adcf70a78a1e100353.jpg" alt="Imagen 1" />
+            <img src="https://i.pinimg.com/736x/f1/23/5f/f1235fe8f5599c87a5ea42e8cb7ccfbe.jpg" alt="Imagen 2" />
+            <img src="https://i.pinimg.com/736x/03/16/25/031625ae9e0adde21bb2f97f64702a1f.jpg" alt="Imagen 3" />
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Creatividad Digital. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+<script src="carrusel.js"
